@@ -1,0 +1,189 @@
+.work {
+  display: block;
+  width: 70%;
+  opacity: 1;
+  height: 480px;
+  background-color: #1c1d25;
+  position: relative;
+  box-shadow: 0 20px 80px 0 rgba(0,0,0,.45);
+  margin-left: auto;
+  margin-right: auto;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all .35s ease;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: " ";
+    background: #1c1d25;
+    opacity: .6;
+    transition: opacity .3s ease;
+    z-index: 2;
+  }
+
+  &__textSection {
+    position: absolute;
+    left: 90px;
+    bottom: 90px;
+    color: #fff;
+    z-index: 10;
+    max-width: 550px;
+    transform: scale(1) translateX(0);
+    transition: transform .45s,opacity .25s, -webkit-transform .45s;
+  }
+
+  &__title {
+    font-size: 46px;
+    font-family: League Spartan,Helvetica,Arial,sans-serif;
+    color: inherit;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-family: Libre Baskerville,Palatino Linotype,Times New Roman,serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  &__button {
+    font-family: League Spartan,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 12px 20px;
+    width: 152px;
+    background: linear-gradient(270deg,#f06449,#ef3636);
+    color: #fff;
+    position: relative;
+    transition: all .3s;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    touch-action: manipulation;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -40px;
+      opacity: 0.9;
+      background: linear-gradient(270deg,#235aa6,#101b3b);
+      width: 40px;
+      height: 100%;
+      transition: .6s cubic-bezier(.694,.048,.335,1) .05s;
+    }
+    &:hover:after {
+      left: 152px;
+    }
+
+    &__text {
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  &__revealMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      opacity: 0.8;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(270deg,#235aa6,#101b3b);
+      overflow: hidden;
+      transition: transform .4s cubic-bezier(.694,.048,.335,1) .15s,-webkit-transform .4s cubic-bezier(.694,.048,.335,1) .15s;
+    }
+  }
+
+  &__maskNumber {
+    display: block;
+    position: absolute;
+    top: -70px;
+    right: -50px;
+    width: 265px;
+    height: 198px;
+    font-size: 180px;
+    font-family: League Spartan,Helvetica,Arial,sans-serif;
+    color: #99999d;
+    opacity: 0;
+    transition: opacity .3s,transform .45s, color .6s cubic-bezier(.694,.048,.335,1);
+    z-index: 90;
+  }
+
+  &__maskBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__maskOverlay {
+    transition: transform .6s cubic-bezier(.694,.048,.335,1) 0s,-webkit-transform .6s cubic-bezier(.694,.048,.335,1) 0s;
+    transition-delay: 0.5s;
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0,100%,0);
+    color: transparent;
+    &:before {
+      content: attr(data-index);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      text-shadow: 5px 5px 11px rgba(74,74,74,.5);
+      width: 100%;
+      height: 100%;
+      transform: translate3d(0,-100%,0);
+      transition: transform .6s cubic-bezier(.694,.048,.335,1) 0s,-webkit-transform .6s cubic-bezier(.694,.048,.335,1) 0s;
+      transition-delay: 0.5s;
+    }
+  }
+
+  &:hover {
+    .work {
+      &__textSection {
+        transform: scale(1.07);
+      }
+
+      &__revealMask:after {
+        transform: translateX(100%);
+      }
+
+      &__maskNumber {
+        transform: translateY(15px);
+        opacity: 1;
+      }
+
+      &__maskOverlay {
+        transform: translate3d(0, 0, 0);
+
+        &:before {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+  }
+}
