@@ -1,6 +1,6 @@
 import React from "react";
-import Case from "./case/Case";
-import { cases } from "../../assets/cases";
+import Case from "./Case/Case";
+import { cases } from "../../assets/data/cases";
 
 export default function Works() {
   return (

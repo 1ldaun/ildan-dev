@@ -1,0 +1,53 @@
+html {
+  width: 100%;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.4);
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background: rgba(0,0,0,.9);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #1c1d25;
+  text-decoration: none;
+}
+.conteiner {
+  padding: 10px 10%;
+  margin: 0 auto;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 720px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f3f3f3;
+  font-family: League Spartan, Arial, sans-serif;
+  font-weight: 400;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}

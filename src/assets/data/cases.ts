@@ -1,4 +1,4 @@
-import { CaseProps } from "../components/works/case/Case";
+import { CaseProps } from "../../components/works/Case/Case";
 
 export const cases: CaseProps[] = [
   {

@@ -14,7 +14,7 @@ const Case: React.FC<CaseProps> = (props) => {
   const { id, background, title, description, button, link } = props;
 
   const getNumberTitle = (id: number): string => {
-    if (id < 10) return "0" + id;
+    if (id < 10) return "0" + (id + 1);
     else return "" + id;
   };
 

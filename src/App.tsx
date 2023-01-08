@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Contacts from "./components/contacts/Contacts";
+import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./main.sass";
+import S from "./App.module.scss";
 import Works from "./components/works/Works";
-import TopSection from "./components/top-section/TopSection";
+import TopSection from "./components/TopSection/TopSection";
 
 function App() {
   const [contactsActive, setContactsActive] = useState(true);
@@ -17,8 +18,8 @@ function App() {
   }, [mobileMenuActive]);
 
   return (
-    <div className="App">
-      <section id="top">
+    <div>
+      <section className={S.topSection}>
         <Header
           active={mobileMenuActive}
           setActive={setMobileMenuActive}
