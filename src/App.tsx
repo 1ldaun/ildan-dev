@@ -8,7 +8,7 @@ import Works from "./components/works/Works";
 import TopSection from "./components/TopSection/TopSection";
 
 function App() {
-  const [contactsActive, setContactsActive] = useState(true);
+  const [contactsActive, setContactsActive] = useState(false);
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
 
   useEffect(() => {

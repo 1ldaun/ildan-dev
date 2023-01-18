@@ -13,26 +13,6 @@
   box-shadow: transparent;
   transition: visibility 1.5s,z-index 1.5s ,box-shadow .6s;
 }
-.contactOpen {
-  visibility: visible;
-  z-index: 60;
-  box-shadow: 0 20px 80px 0 rgba(0,0,0,.55);
-
-  .half-contact {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.halfContact {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  transition: transform .6s cubic-bezier(.694,.048,.335,1),opacity .45s,-webkit-transform .6s cubic-bezier(.694,.048,.335,1);
-}
 .isContact {
   background-color: rgba(28,29,37,.985);
   color: #f3f3f3;
@@ -50,6 +30,25 @@
     top: -10px;
     left: 100px;
     color: #444;
+  }
+}
+.halfContact {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform .6s cubic-bezier(.694,.048,.335,1),opacity .45s,-webkit-transform .6s cubic-bezier(.694,.048,.335,1);
+}
+.contactOpen {
+  visibility: visible;
+  z-index: 60;
+  box-shadow: 0 20px 80px 0 rgba(0,0,0,.55);
+
+  .halfContact {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .contactSocial {
@@ -168,7 +167,7 @@
         display: block;
       }
 
-      .about-me-list-label {
+      .aboutMeListLabel {
         position: absolute;
         bottom: -25px;
         left: 0;

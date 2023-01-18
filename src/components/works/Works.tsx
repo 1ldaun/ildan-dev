@@ -1,19 +1,20 @@
 import React from "react";
 import Case from "./Case/Case";
 import { cases } from "../../assets/data/cases";
+import S from "./Works.module.scss";
 
 export default function Works() {
   return (
-    <section id="works" className="works-section">
-      <div className="section-mask"></div>
-      <div className="content">
-        <div className="section-text-mask">
-          <h4 className="h5 section-subtitle">Case Studies</h4>
+    <section id="works" className={S.worksSection}>
+      <div className={S.sectionMask}></div>
+      <div className={S.content}>
+        <div className={S.sectionMask__text}>
+          <h4 className={S.section__subtitle}>Case Studies</h4>
         </div>
-        <div className="section-text-mask">
-          <h2 className="h3 section-title">Latest Works</h2>
+        <div className={S.sectionMask__text}>
+          <h2 className={S.section__title}>Latest Works</h2>
         </div>
-        <ul className="works-list">
+        <ul className={S.worksList}>
           {cases.map((item) => (
             <Case key={item.id} {...item} />
           ))}

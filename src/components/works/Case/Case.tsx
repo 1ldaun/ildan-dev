@@ -1,5 +1,6 @@
 import React from "react";
 import S from "./Case.module.scss";
+import cx from "classnames";
 
 export interface CaseProps {
   id: number;
@@ -26,7 +27,9 @@ const Case: React.FC<CaseProps> = (props) => {
         style={{ backgroundImage: "url(" + background + ")" }}
       >
         <div className={S.work__revealMask}></div>
-        <div className={S.work__maskNumber}>
+        <div
+          className={cx(S.work__maskNumber, id % 2 === 0 ? S.right : S.left)}
+        >
           <div className={S.work__maskBack}>{getNumberTitle(id)}</div>
           <div>
             <div
@@ -37,7 +40,9 @@ const Case: React.FC<CaseProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className={S.work__textSection}>
+        <div
+          className={cx(S.work__textSection, id % 2 === 0 ? S.right : S.left)}
+        >
           <h3 itemProp="name" className={S.work__title}>
             {title}
           </h3>

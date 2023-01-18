@@ -9,9 +9,9 @@ export interface ContactsProps {
 
 const Contacts: React.FC<ContactsProps> = ({ active, setActive }) => {
   return (
-    <div className={cx(active ? "" : S.contactOpen, S.aboutContact)}>
+    <div className={cx(S.aboutContact, active ? S.contactOpen : "")}>
       <div className={cx(S.halfContact, S.isContact)}>
-        <button className={S.close} onClick={() => setActive(true)}>
+        <button className={S.close} onClick={() => setActive(false)}>
           &times;
         </button>
         <div className={S.contactInfo}>

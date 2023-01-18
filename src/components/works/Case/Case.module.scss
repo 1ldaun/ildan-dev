@@ -6,8 +6,7 @@
   background-color: #1c1d25;
   position: relative;
   box-shadow: 0 20px 80px 0 rgba(0,0,0,.45);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,6 +35,12 @@
     max-width: 550px;
     transform: scale(1) translateX(0);
     transition: transform .45s,opacity .25s, -webkit-transform .45s;
+
+    &.left {
+      text-align: right;
+      right: 90px;
+      left: auto;
+    }
   }
 
   &__title {
@@ -121,7 +126,6 @@
     display: block;
     position: absolute;
     top: -70px;
-    right: -50px;
     width: 265px;
     height: 198px;
     font-size: 180px;
@@ -131,6 +135,18 @@
     opacity: 0;
     transition: opacity .3s,transform .45s, color .6s cubic-bezier(.694,.048,.335,1);
     z-index: 90;
+
+    &.right {
+      left: auto;
+      text-align: right;
+      right: 30px;
+    }
+
+    &.left {
+      right: auto;
+      text-align: left;
+      left: 30px;
+    }
   }
 
   &__maskBack {

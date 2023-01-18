@@ -7,7 +7,7 @@ header {
   position: relative;
   height: 15vh;
 
-  @media only screen and (max-width : 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 10px 25px 10px 10px;
   }
@@ -17,9 +17,10 @@ header {
   width: 80px;
   height: 80px;
 
-  @media only screen and (max-width : 768px) {
+  @media only screen and (max-width: 768px) {
     .logo {
       margin-left: 10px;
+
       img {
         width: 55px;
         height: 55px;
@@ -27,24 +28,26 @@ header {
     }
   }
 }
+
 .logoBack {
   width: 636px;
 
-  @media only screen and (max-width : 768px) {
+  @media only screen and (max-width: 768px) {
     width: 460px;
   }
 
-  @media only screen and (max-width : 480px) {
+  @media only screen and (max-width: 480px) {
     width: 300px;
   }
 }
 
 .navigation {
   width: 30%;
-  @media only screen and (max-width : 768px) {
+  @media only screen and (max-width: 768px) {
     display: none;
   }
 }
+
 .navigation ul {
   display: flex;
   justify-content: space-around;
@@ -72,7 +75,7 @@ header {
     z-index: 2;
     opacity: 0;
     background-color: #f25757;
-    transition: all .25s cubic-bezier(.694,.048,.335,1);
+    transition: all .25s cubic-bezier(.694, .048, .335, 1);
   }
 
   &:hover {
@@ -83,11 +86,36 @@ header {
 }
 
 .menuTrigger {
-  @media only screen and (max-width : 768px) {
+  @media only screen and (max-width: 768px) {
     display: block;
     width: 42px;
     height: 42px;
     cursor: pointer;
+  }
+}
+
+.navSocialStripe {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 15%;
+  width: 80%;
+  margin: 0;
+  transform: translateY(15px);
+  opacity: 0;
+  padding-left: 25px;
+  transition: opacity .3s ease, transform .4s cubic-bezier(.694, .048, .335, 1), -webkit-transform .4s cubic-bezier(.694, .048, .335, 1);
+  transition-delay: 0s;
+  list-style: none;
+  z-index: 126;
+
+  li {
+    display: inline-block;
+  }
+
+  i {
+    font-size: 32px;
+    color: #fff;
   }
 }
 
@@ -109,50 +137,35 @@ header {
       transform: translateY(0);
     }
   }
-
-  @media only screen and (max-width : 768px) {
-
-  }
 }
-.navSocialStripe {
-  display: none;
+
+
+.mobileNavLinks {
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity .3s ease, transform .4s cubic-bezier(.694, .048, .335, 1), -webkit-transform .4s cubic-bezier(.694, .048, .335, 1);
   position: absolute;
-  bottom: 30px;
+  transform-style: preserve-3d;
+  top: 50%;
   left: 15%;
-  width: 80%;
+  width: 70%;
   margin: 0;
   padding: 0;
-  transform: translateY(15px);
-  opacity: 0;
-  padding-left: 25px;
-  transition: opacity .3s ease,transform .4s cubic-bezier(.694,.048,.335,1),-webkit-transform .4s cubic-bezier(.694,.048,.335,1);
-  transition-delay: 0s;
   list-style: none;
   z-index: 126;
+  transition-delay: 0s;
 
-  li {
+  p, a {
     display: inline-block;
-  }
-
-  i {
-    font-size: 32px;
     color: #fff;
+    font-size: 28px;
+    padding: 12px 25px;
+    font-family: League Spartan, Helvetica, Arial, sans-serif;
+    cursor: pointer;
   }
 }
 
-.mobileNavLinks a {
-  display: inline-block;
-  color: #fff;
-  font-size: 28px;
-  padding: 12px 25px;
-  font-family: League Spartan,Helvetica,Arial,sans-serif;
-}
-
-.navToggle {
-  display: none;
-}
-
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
   .mobileMenu__open {
     visibility: visible;
     z-index: 145;
@@ -171,6 +184,18 @@ header {
       display: block;
     }
 
+    &:after {
+      transition-delay: .15s;
+      background: linear-gradient(270deg, #235aa6, #101b3b);
+      z-index: 125;
+    }
+
+    &:before {
+      transition-delay: .25s;
+      background: linear-gradient(270deg, #f06449, #ee2828);
+      z-index: 124;
+    }
+
     &:after, &:before {
       will-change: transform;
       content: "";
@@ -181,26 +206,11 @@ header {
       height: 100%;
       transform: translateX(0);
       overflow-y: hidden;
-      transition: transform .45s cubic-bezier(.694,.048,.335,1),-webkit-transform .45s cubic-bezier(.694,.048,.335,1);
-    }
-
-    &:after {
-      transition-delay: .15s;
-      background-color: #1c1d25;
-      background: linear-gradient(270deg,#235aa6,#101b3b);
-      z-index: 125;
-    }
-
-    &:before {
-      transition-delay: .25s;
-      background-color: #f06449;
-      background: linear-gradient(270deg,#f06449,#ee2828);
-      z-index: 124;
-      transition-delay: 0s;
+      transition: transform .45s cubic-bezier(.694, .048, .335, 1), -webkit-transform .45s cubic-bezier(.694, .048, .335, 1);
     }
   }
 
-  .navToggle, .mobileMenu {
+  .mobileMenu {
     display: block;
   }
 
@@ -236,7 +246,7 @@ header {
     right: 20px;
     transform: scale(.75);
     opacity: 0;
-    transition: opacity .25s ease 0s,transform .35s cubic-bezier(.694,.048,.335,1) 0s,-webkit-transform .35s cubic-bezier(.694,.048,.335,1) 0s;
+    transition: opacity .25s ease 0s, transform .35s cubic-bezier(.694, .048, .335, 1) 0s, -webkit-transform .35s cubic-bezier(.694, .048, .335, 1) 0s;
     z-index: 146;
     display: block;
     width: 42px;
@@ -264,19 +274,6 @@ header {
     opacity: 1;
     transition-delay: .4s;
     transform: translateY(-60%);
-    position: absolute;
-    transform-style: preserve-3d;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 15%;
-    width: 70%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    opacity: 0;
-    transition: opacity .3s ease,transform .4s cubic-bezier(.694,.048,.335,1),-webkit-transform .4s cubic-bezier(.694,.048,.335,1);
-    transition-delay: 0s;
-    z-index: 126;
   }
 
   .navSocialStripe {

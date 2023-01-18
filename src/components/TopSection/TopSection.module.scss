@@ -32,6 +32,19 @@
   }
 }
 
+.about {
+  width: 130px;
+  height: 45px;
+  color: #f3f3f3;
+  letter-spacing: 1.6px;
+  font-family: League Spartan, Arial, sans-serif;
+  font-weight: 400;
+  background-color: #f06449;
+  background: linear-gradient(270deg,#f06449,#ef3636);
+  border: none;
+  cursor: pointer;
+}
+
 .nameTitle {
   position: absolute;
   display: flex;

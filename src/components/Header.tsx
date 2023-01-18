@@ -21,13 +21,11 @@ const Header: React.FC<HeaderProps> = ({
           <img src="/img/logo-grey2.png" alt="logo" />
         </div>
       </a>
-      <div onClick={() => setActive(true)} className={S.navToggle}>
-        <span className={S.menuTrigger}>
-          <i className={cx(S.menuTrigger__bar, S.top)}></i>
-          <i className={cx(S.menuTrigger__bar, S.middle)}></i>
-          <i className={cx(S.menuTrigger__bar, S.bottom)}></i>
-        </span>
-      </div>
+      <span onClick={() => setActive(true)} className={S.menuTrigger}>
+        <i className={cx(S.menuTrigger__bar, S.top)}></i>
+        <i className={cx(S.menuTrigger__bar, S.middle)}></i>
+        <i className={cx(S.menuTrigger__bar, S.bottom)}></i>
+      </span>
       <nav className={S.navigation}>
         <ul>
           <li>
@@ -35,18 +33,10 @@ const Header: React.FC<HeaderProps> = ({
               Works
             </Link>
           </li>
-          <li>
-            <a
-              href="#1"
-              onClick={() => setContactsActive(false)}
-              className={S.menuLink}
-            >
-              Contact
-            </a>
+          <li onClick={() => setContactsActive(true)} className={S.menuLink}>
+            Contact
           </li>
-          <li>
-            <a href="#1" className={S.menuLink}></a>
-          </li>
+          <li />
         </ul>
       </nav>
       <nav className={cx(S.mobileMenu, active ? S.mobileMenu__open : "")}>
@@ -56,9 +46,7 @@ const Header: React.FC<HeaderProps> = ({
         </span>
         <ul className={S.mobileNavLinks}>
           <li>
-            <a href="#1" onClick={() => setActive(false)}>
-              Home
-            </a>
+            <p onClick={() => setActive(false)}>Home</p>
           </li>
           <li className="in-single-work">
             <Link
@@ -71,8 +59,7 @@ const Header: React.FC<HeaderProps> = ({
             </Link>
           </li>
           <li>
-            <a
-              href="#1"
+            <p
               onClick={() => {
                 setActive(false);
                 setContactsActive(false);
@@ -80,10 +67,10 @@ const Header: React.FC<HeaderProps> = ({
               className="no-smoothState open-contact"
             >
               Contact
-            </a>
+            </p>
           </li>
         </ul>
-        <ul className="nav-social-stripe">
+        <ul className={S.navSocialStripe}>
           <li>
             <a
               href="https://t.me/d1sinterested"

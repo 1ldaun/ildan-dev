@@ -20,7 +20,7 @@ const TopSection: React.FC<TopSectionProps> = ({ setActive }) => {
           <div id="h2-mask" className={cx(S.hLoading, S.h2Loading)}></div>
         </div>
         <div onClick={() => setActive(false)} className={S.buttonMask}>
-          <input id="about" type="button" value="About me" />
+          <input type="button" value="About me" className={S.about} />
           <span className={S.buttonIcon}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
